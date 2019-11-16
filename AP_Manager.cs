@@ -41,6 +41,13 @@ namespace AutoPool
                 poolRef = new Dictionary<string, AP_Pool>();
             }
         }
+        
+        public bool IsExistObject(string name)
+        {
+            if (poolRef == null)
+                return false;
+            return poolRef.ContainsKey(prefab.name) ? true : false;
+        }
 
         public bool InitializeSpawn(GameObject prefab, float addPool, int minPool, AP_enum.EmptyBehavior emptyBehavior, AP_enum.MaxEmptyBehavior maxEmptyBehavior, bool modBehavior)
         {
